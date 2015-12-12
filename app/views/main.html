@@ -1,0 +1,41 @@
+<div class="jumbotron">
+  <h1> Hello Diaa</h1>
+  <form ng-submit="search()">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group">
+          <input type="text"
+                 ng-model="searchText"
+                 class="form-control"
+                 placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="row" ng-repeat="ip in ips" ng-show="ips && ips.length">
+  <div class="col-md-3"> {{ip.get('ip')}} </div>
+  <div class="col-md-2"> {{ip.get('type')}} </div>
+  <div class="col-md-3"> {{ip.get('username')}} </div>
+  <div class="col-md-3"> {{ip.get('password')}} </div>
+  <div class="col-md-1">
+    <button class="btn btn-primary" type="button">
+      <i class="glyphicon glyphicon-play"></i>
+    </button>
+  </div>
+</div>
+
+<div class="row" ng-hide="ips && ips.length">
+  <button class="col-md-offset-4 col-md-4 btn btn-success btn-lg"
+    type="button"
+    ng-click="newModal()">
+    Create new <i class="glyphicon glyphicon-plus"></i>
+  </button>
+</div>
+<div class="row"> &nbsp; </div>
